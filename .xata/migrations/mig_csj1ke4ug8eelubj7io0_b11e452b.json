@@ -1,0 +1,13 @@
+{
+  "id": "mig_csj1ke4ug8eelubj7io0",
+  "parentID": "mig_csj1dvhnnt0jf9fpbn2g",
+  "checksum": "1:b11e452be640cb3c144e4758986551f894866bc67cec0fe912e02d21eade0ce4",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "total",
+        "table": "invoices"
+      }
+    }
+  ]
+}

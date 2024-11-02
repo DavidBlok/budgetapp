@@ -1,0 +1,14 @@
+{
+  "id": "mig_csj1l2hgjbv985tvvhug",
+  "parentID": "mig_csj1kj9nnt0jf9fpbn50",
+  "checksum": "1:3efa3b896e77da31e3bfb45d4da6c64eb9724c19baa136968e0dea8f6cef7e1e",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "client",
+        "oldName": "clientId",
+        "table": "invoices"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "mig_csj1cnkug8eelubj7img",
+  "parentID": "mig_csj18dpgjbv985tvvhq0",
+  "checksum": "1:b6ac8ff8e8f239847d9c44bd280df380b83e8f97a7a23edded4b6c190f223090",
+  "operations": [
+    {
+      "addTable": {
+        "table": "invoices"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_csj1dt1nnt0jf9fpbn1g",
+  "parentID": "mig_csj1dqhgjbv985tvvhs0",
+  "checksum": "1:808d8fbf36691b18db6fdbdeac1a3f37a032d78b2860c52e61350db3a6fc0841",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "text"
+        },
+        "table": "clients"
+      }
+    }
+  ]
+}
