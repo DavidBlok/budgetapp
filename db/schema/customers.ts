@@ -7,7 +7,7 @@ export const Customers = pgTable("customers", {
     .$defaultFn(() => createId()),
   orgId: text("orgId"),
   userId: text("userId").notNull(),
-  name: integer("name").notNull(),
+  name: text("name").notNull(),
   vatNr: text("vatNr").notNull(),
   updated_at: timestamp("updated_at")
     .defaultNow()

@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/Sidebar";
+import { ReactQueryClientProvider } from "@/components/providers/ReactQueryClientProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,25 +21,27 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en" className="h-full" suppressHydrationWarning>
-        <body className="antialiased min-h-screen">
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <SidebarProvider>
-              <AppSidebar />
-              <div className="w-full flex flex-col">
-                <Header />
-                <main className="grow p-6">{children}</main>
-                <Footer />
-              </div>
-            </SidebarProvider>
-          </ThemeProvider>
-        </body>
-      </html>
+      <ReactQueryClientProvider>
+        <html lang="en" className="h-full" suppressHydrationWarning>
+          <body className="antialiased min-h-screen">
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="light"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <SidebarProvider>
+                <AppSidebar />
+                <div className="w-full flex flex-col">
+                  <Header />
+                  <main className="grow p-6">{children}</main>
+                  <Footer />
+                </div>
+              </SidebarProvider>
+            </ThemeProvider>
+          </body>
+        </html>
+      </ReactQueryClientProvider>
     </ClerkProvider>
   );
 }

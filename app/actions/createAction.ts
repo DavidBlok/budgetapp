@@ -5,7 +5,7 @@ import { auth } from "@clerk/nextjs/server";
 import { Invoices } from "@/db/schema/invoices";
 
 export async function createAction(formData: FormData) {
-  const { userId } = await auth();
+  const { userId, orgId } = await auth();
 
   const value = Math.floor(parseFloat(String(formData.get("value"))) * 100);
   const description = String(formData.get("description"));
@@ -18,6 +18,8 @@ export async function createAction(formData: FormData) {
     .insert(Invoices)
     .values({
       userId: userId,
+      orgId: orgId,
+      customerId: "1",
       value: value,
       description: description,
       status: "open",
