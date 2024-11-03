@@ -18,16 +18,15 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader className="p-0">
-        <div className="h-16 bg-gray-100 dark:bg-gray-900 border-b flex items-center px-4 gap-2 font-semibold">
-          <Building2 className="w-5 h-5" />
-          <div className="truncate">BLOK CONSULTING</div>
+        <div className="h-16 bg-blue-200 dark:bg-blue-800 border-b flex items-center justify-center px-4 gap-2 font-semibold">
+          <div className="truncate">BUDGET APP</div>
         </div>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroupContent className="px-2">
+        <SidebarGroupContent className="px-2 py-4">
           <SidebarMenu className="font-semibold">
             <SidebarMenuItem>
-              <SidebarMenuButton asChild>
+              <SidebarMenuButton asChild className="h-12">
                 <Link href="/dashboard">
                   <LayoutDashboard />
                   <span>DASHBOARD</span>
@@ -35,7 +34,7 @@ export function AppSidebar() {
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild>
+              <SidebarMenuButton asChild className="h-12">
                 <Link href="/customers">
                   <Building2 />
                   <span>CUSTOMERS</span>
@@ -43,7 +42,7 @@ export function AppSidebar() {
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild>
+              <SidebarMenuButton asChild className="h-12">
                 <Link href="/">
                   <Package />
                   <span>ARTICLES</span>
@@ -51,7 +50,7 @@ export function AppSidebar() {
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild>
+              <SidebarMenuButton asChild className="h-12">
                 <Link href="/">
                   <Inbox />
                   <span>INVOICES</span>

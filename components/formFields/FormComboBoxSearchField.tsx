@@ -1,3 +1,4 @@
+"use client";
 import {
   FormControl,
   FormDescription,
@@ -26,43 +27,29 @@ import {
 } from "@/components/ui/popover";
 import { useState } from "react";
 
+export type ComboBoxSearchDataType =
+  | {
+      value: string;
+      label: string;
+    }[]
+  | undefined;
+
 interface FormComboBoxSearchFieldProps {
   control: Control<any>;
   name: string;
   label?: string;
   description?: string;
   placeholder?: string;
+  data: ComboBoxSearchDataType;
 }
-
-const frameworks = [
-  {
-    value: "next.js",
-    label: "Next.js",
-  },
-  {
-    value: "sveltekit",
-    label: "SvelteKit",
-  },
-  {
-    value: "nuxt.js",
-    label: "Nuxt.js",
-  },
-  {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-  },
-];
 
 export const FormComboBoxSearchField = ({
   control,
   name,
   label,
   description,
-  placeholder,
+  placeholder = "Select an item",
+  data = [],
 }: FormComboBoxSearchFieldProps) => {
   const [open, setOpen] = useState(false);
 
@@ -84,9 +71,7 @@ export const FormComboBoxSearchField = ({
                   className="w-full justify-between"
                 >
                   {field.value
-                    ? frameworks.find(
-                        (framework) => framework.value === field.value,
-                      )?.label
+                    ? data.find((item) => item.value === field.value)?.label
                     : placeholder}
                   <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                 </Button>
@@ -95,12 +80,12 @@ export const FormComboBoxSearchField = ({
                 <Command>
                   <CommandInput placeholder={placeholder} />
                   <CommandList>
-                    <CommandEmpty>No framework found.</CommandEmpty>
+                    <CommandEmpty>No Items found.</CommandEmpty>
                     <CommandGroup>
-                      {frameworks.map((framework) => (
+                      {data.map((item) => (
                         <CommandItem
-                          key={framework.value}
-                          value={framework.value}
+                          key={item.value}
+                          value={item.value}
                           onSelect={(currentValue) => {
                             field.onChange({
                               target: {
@@ -116,12 +101,12 @@ export const FormComboBoxSearchField = ({
                           <Check
                             className={cn(
                               "mr-2 h-4 w-4",
-                              field.value === framework.value
+                              field.value === item.value
                                 ? "opacity-100"
                                 : "opacity-0",
                             )}
                           />
-                          {framework.label}
+                          {item.label}
                         </CommandItem>
                       ))}
                     </CommandGroup>

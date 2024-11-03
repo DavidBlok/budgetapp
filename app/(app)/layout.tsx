@@ -8,6 +8,21 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/Sidebar";
 import { ReactQueryClientProvider } from "@/components/providers/ReactQueryClientProvider";
+import { Lato, Poppins } from "next/font/google";
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["300"],
+  variable: "--font-lato",
+  display: "swap",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["200"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +37,11 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <ReactQueryClientProvider>
-        <html lang="en" className="h-full" suppressHydrationWarning>
+        <html
+          lang="en"
+          className={`h-full ${lato.variable} ${poppins.variable}`}
+          suppressHydrationWarning
+        >
           <body className="antialiased min-h-screen">
             <ThemeProvider
               attribute="class"

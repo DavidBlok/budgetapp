@@ -6,7 +6,7 @@ import { Search } from "lucide-react";
 
 export const Header = () => {
   return (
-    <header className="h-16 bg-gray-100 dark:bg-gray-900 border-b">
+    <header className="h-16 bg-blue-200 dark:bg-blue-800 border-b">
       <div className="w-full h-full flex justify-between items-center px-4">
         <div className="flex items-center gap-2">
           <SidebarTrigger className="xs:hidden" />

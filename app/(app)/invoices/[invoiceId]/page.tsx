@@ -28,8 +28,6 @@ export default async function InvoicePage({
     notFound();
   }
 
-  console.log(result);
-
   return (
     <main className="max-w-5xl mx-auto flex flex-col gap-6 h-full m-12">
       <div className="flex justify-between">

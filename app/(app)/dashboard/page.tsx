@@ -26,9 +26,11 @@ export default async function Dashboard() {
   const invoices = await db
     .select()
     .from(Invoices)
-    .where(and(eq(Invoices.userId, userId), isNull(Invoices.value)));
-
-  console.log(invoices);
+    .where(
+      orgId
+        ? and(eq(Invoices.orgId, orgId))
+        : and(eq(Invoices.userId, userId!), isNull(Invoices.orgId)),
+    );
 
   return (
     <main className="flex flex-col gap-6">
