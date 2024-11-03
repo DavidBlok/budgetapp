@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html, body {
-  @apply font-lato;
+  @apply font-publicSans;
 }
 
 @layer base {

@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        lato: ["var(--font-lato)"],
+        publicSans: ["var(--font-publicSans)"],
         poppins: ["var(--font-poppins)"],
       },
       colors: {

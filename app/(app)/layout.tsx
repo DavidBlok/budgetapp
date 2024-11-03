@@ -8,12 +8,12 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/Sidebar";
 import { ReactQueryClientProvider } from "@/components/providers/ReactQueryClientProvider";
-import { Lato, Poppins } from "next/font/google";
+import { Public_Sans, Poppins } from "next/font/google";
 
-const lato = Lato({
+const publicSans = Public_Sans({
   subsets: ["latin"],
-  weight: ["300"],
-  variable: "--font-lato",
+  weight: ["100", "300"],
+  variable: "--font-publicSans",
   display: "swap",
 });
 
@@ -39,7 +39,7 @@ export default function RootLayout({
       <ReactQueryClientProvider>
         <html
           lang="en"
-          className={`h-full ${lato.variable} ${poppins.variable}`}
+          className={`h-full ${publicSans.variable} ${poppins.variable}`}
           suppressHydrationWarning
         >
           <body className="antialiased min-h-screen">
